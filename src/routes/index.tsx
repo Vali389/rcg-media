@@ -14,6 +14,7 @@ import {
   HeartHandshake,
   Layers,
   MapPin,
+  Megaphone,
   Mic,
   Palette,
   Play,
@@ -884,6 +885,153 @@ function Home() {
               </Link>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      {/* Ads Agency & Performance Marketing Section (Core Revenue Engine) */}
+      <section className="relative border-y border-border bg-gradient-to-b from-card via-card/90 to-background py-20 lg:py-28 overflow-hidden">
+        {/* Ambient glow */}
+        <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-96 w-[800px] rounded-full bg-accent/10 blur-3xl" />
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/30 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.3em] text-red-300">
+                <Megaphone className="h-3.5 w-3.5 text-accent" />
+                Ads Agency & Growth Engine
+              </span>
+              <h2 className="mt-4 font-display text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+                High-ROAS Advertising on{" "}
+                <span className="gold-text italic">Meta & Google Ads</span>
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                As a performance marketing and advertising agency, our primary focus is helping businesses
+                scale revenue. We engineer high-converting campaigns across Meta (Facebook & Instagram),
+                Google Search, and YouTube that turn ad spend into predictable customer acquisition.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* 3 Core Ads Pillars */}
+          <div className="mt-14 grid gap-8 md:grid-cols-3">
+            <Reveal delay={80}>
+              <div className="group h-full rounded-3xl border border-border/80 bg-card p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-xl hover:shadow-accent/10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-blue-600/20 to-purple-600/20 text-blue-400">
+                  <Megaphone className="h-6 w-6" />
+                </div>
+                <span className="mt-5 inline-block text-[10px] font-bold uppercase tracking-wider text-accent">
+                  Instagram & Facebook
+                </span>
+                <h3 className="mt-1 font-display text-xl font-bold text-foreground">
+                  Meta Performance Ads
+                </h3>
+                <p className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground">
+                  Laser-targeted lead funnels, viral promotional reels, carousel catalogues, and
+                  automated WhatsApp click-to-chat ads designed to convert active social scrollers into
+                  paying customers.
+                </p>
+                <div className="mt-6 border-t border-border/60 pt-4 space-y-2 text-xs text-foreground/85">
+                  <div className="flex items-center gap-2">
+                    <Check className="h-3.5 w-3.5 text-accent" /> Custom Lookalike Audiences
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="h-3.5 w-3.5 text-accent" /> High-Converting Video Hooks
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="h-3.5 w-3.5 text-accent" /> WhatsApp Direct Lead Gen
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={160}>
+              <div className="group h-full rounded-3xl border border-accent/50 bg-card p-8 shadow-xl shadow-accent/10 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-green-600/20 to-yellow-600/20 text-green-400">
+                  <TrendingUp className="h-6 w-6" />
+                </div>
+                <span className="mt-5 inline-block text-[10px] font-bold uppercase tracking-wider text-accent">
+                  Search & YouTube
+                </span>
+                <h3 className="mt-1 font-display text-xl font-bold text-foreground">
+                  Google & YouTube Ads
+                </h3>
+                <p className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground">
+                  Capture high-intent customer search queries the exact moment they need your service.
+                  Combined with YouTube in-stream commercial ads and local Google Maps discovery campaigns.
+                </p>
+                <div className="mt-6 border-t border-border/60 pt-4 space-y-2 text-xs text-foreground/85">
+                  <div className="flex items-center gap-2">
+                    <Check className="h-3.5 w-3.5 text-accent" /> High-Intent Keyword Targeting
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="h-3.5 w-3.5 text-accent" /> YouTube Bumper & Video Ads
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="h-3.5 w-3.5 text-accent" /> Local Maps Footfall Campaigns
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={240}>
+              <div className="group h-full rounded-3xl border border-border/80 bg-card p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-xl hover:shadow-accent/10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-amber-600/20 to-accent/20 text-accent">
+                  <Sparkles className="h-6 w-6" />
+                </div>
+                <span className="mt-5 inline-block text-[10px] font-bold uppercase tracking-wider text-accent">
+                  Tracking & Optimization
+                </span>
+                <h3 className="mt-1 font-display text-xl font-bold text-foreground">
+                  ROAS & Conversion Funnels
+                </h3>
+                <p className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground">
+                  Meta Conversions API, Google Tag Manager, server-side tracking, and continuous A/B
+                  testing of ad creative variations to lower cost per lead and maximize your return on ad spend.
+                </p>
+                <div className="mt-6 border-t border-border/60 pt-4 space-y-2 text-xs text-foreground/85">
+                  <div className="flex items-center gap-2">
+                    <Check className="h-3.5 w-3.5 text-accent" /> Server-Side Conversion API
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="h-3.5 w-3.5 text-accent" /> A/B Ad Creative Testing
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="h-3.5 w-3.5 text-accent" /> Transparent Weekly ROAS Reports
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Action Callout Banner */}
+          <Reveal delay={280}>
+            <div className="mt-12 flex flex-wrap items-center justify-between gap-6 rounded-3xl border border-accent/40 bg-accent/10 p-6 sm:p-8">
+              <div>
+                <p className="font-display text-lg sm:text-xl font-bold text-foreground">
+                  Ready to turn ad spend into scalable revenue?
+                </p>
+                <p className="mt-1 text-xs sm:text-sm text-muted-foreground">
+                  Book a free media audit — our strategists will analyze your ad account and recommend a winning growth roadmap.
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center gap-3">
+                <Link
+                  to="/contact"
+                  className="rounded-full bg-accent px-6 py-3 text-xs font-bold text-accent-foreground shadow-lg shadow-accent/25 hover:brightness-110 transition-all"
+                >
+                  Start Ads Campaign
+                </Link>
+                <a
+                  href="https://wa.me/919989886369?text=Hello%20RCG%20Media,%20I%20would%20like%20to%20enquire%20about%20Meta%20and%20Google%20Ads."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-border bg-card px-5 py-3 text-xs font-semibold text-foreground hover:border-[#25D366] hover:text-[#25D366] transition-all"
+                >
+                  WhatsApp Us
+                </a>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 

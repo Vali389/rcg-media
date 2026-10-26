@@ -37,152 +37,181 @@ export type Service = {
   description: string;
   image: string;
   items: string[];
+  conclusion?: string;
 };
 
 export const services: Service[] = [
   {
     id: "business-branding",
     icon: Palette,
-    title: "Business Branding & Development",
+    title: "Business Branding & Brand Development",
     category: "BRAND IDENTITY & POSITIONING",
     tagline: "Build a professional identity. Communicate your value.",
     description:
-      "We help businesses build a professional identity and communicate their value effectively through end-to-end positioning, visual design, and creative launch strategies.",
+      "We help businesses build a professional identity and communicate their value effectively through strategic market positioning, visual systems, and launch campaigns.",
     image: serviceBranding,
     items: [
-      "Brand Identity",
-      "Logo Design",
-      "Company Profiles",
-      "Packaging & Print",
-      "Personal Branding",
-      "Launch Strategy",
+      "Brand identity and positioning",
+      "Logo design and creative branding materials",
+      "Business profiles and company presentations",
+      "Brand communication and promotional concepts",
+      "Personal branding for entrepreneurs and professionals",
+      "Creative strategies for new business launches",
     ],
+    conclusion:
+      "By defining your unique market value and creating consistent, high-impact visual touchpoints, we ensure your brand commands attention and builds lasting customer trust from day one.",
   },
   {
     id: "website-design",
     icon: MonitorSmartphone,
-    title: "Website Design & Digital Presence",
+    title: "Website Design & Mobile App Development",
     category: "WEB, MOBILE & DIGITAL PRESENCE",
-    tagline: "Essential credibility for modern business.",
+    tagline: "Essential credibility and seamless user experience across all devices.",
     description:
-      "A professional digital presence is essential for building credibility and connecting with potential customers across web, mobile, and social platforms.",
+      "A professional digital presence is essential for building credibility and connecting with potential customers across web and mobile platforms.",
     image: serviceWeb,
     items: [
-      "Website Design",
-      "Landing Pages",
-      "UI/UX Direction",
-      "Content Planning",
-      "Profile Setup",
-      "SEO Optimization",
+      "Business website design and development coordination",
+      "Mobile-first responsive web apps & portal development",
+      "Website content planning and brand messaging",
+      "Landing pages for business promotions and paid campaigns",
+      "Website design concepts and creative UI/UX direction",
+      "Social media profile setup and optimization support",
+      "Digital brand visibility & SEO optimization solutions",
     ],
+    conclusion:
+      "From high-converting landing pages to comprehensive corporate web platforms and mobile applications, we ensure your brand delivers a seamless, credible digital experience that turns visitors into paying customers.",
   },
   {
     id: "content-video-production",
     icon: Video,
-    title: "A–Z Content & Video Production",
+    title: "A–Z Content Creation & Video Production",
     category: "CINEMA VIDEO & COMMERCIAL AD FILMS",
     tagline: "Transform ideas into engaging visual stories.",
     description:
-      "From planning and scripting to shooting and editing, our focus is on creating content that communicates your brand message clearly, cinematically, and professionally.",
+      "Content plays a vital role in modern marketing. RCG Media helps businesses transform their ideas, products, and services into engaging visual stories.",
     image: serviceVideo,
     items: [
-      "Viral Reels & Shorts",
-      "Product Promos",
-      "Corporate Films",
-      "Creative Ad Films",
-      "Scriptwriting",
-      "Color & Post-Production",
+      "Professional reels and short-form videos",
+      "Business and product promotional videos",
+      "Corporate videos and brand films",
+      "Creative advertising videos and ad films",
+      "Scriptwriting and content concept development",
+      "Video shoots, editing, and post-production",
+      "Social media content planning and creation",
+      "Interviews, storytelling videos, and campaign content",
     ],
+    conclusion:
+      "From planning and scripting to shooting and editing, our focus is on creating content that communicates your brand message clearly and professionally.",
   },
   {
     id: "digital-marketing",
     icon: Megaphone,
-    title: "Digital & Social Media Marketing",
-    category: "PERFORMANCE MARKETING & SOCIAL GROWTH",
-    tagline: "Reach the right audience. Build trust.",
+    title: "Digital Marketing & Ads Agency (Meta & Google)",
+    category: "ADS AGENCY & PERFORMANCE MARKETING (MAIN REVENUE ENGINE)",
+    tagline: "Reach the right audience, generate qualified leads, and maximize ROAS.",
     description:
-      "We support businesses in strengthening their online presence with data-backed campaigns, content calendars, and targeted promotional strategies.",
+      "RCG Media supports businesses in strengthening their online presence and connecting with their target audiences through data-backed performance advertising across Meta, Google, and social platforms.",
     image: serviceMarketing,
     items: [
-      "Campaign Planning",
-      "Meta & Instagram Ads",
-      "YouTube Marketing",
-      "Content Calendars",
-      "Audience Growth",
-      "ROI Tracking",
+      "Digital marketing strategy and campaign planning",
+      "Meta Ads (Facebook & Instagram) performance campaigns & lead funnels",
+      "Google Ads & YouTube marketing management",
+      "Brand awareness and customer acquisition campaigns",
+      "Content calendars and creative campaign development",
+      "Digital advertising campaign coordination & ROAS optimization",
+      "Audience engagement and online visibility initiatives",
+      "Marketing support tailored to business growth requirements",
     ],
+    conclusion:
+      "Our approach focuses on understanding the business, identifying its target audience, and deploying targeted Meta and Google ad strategies that turn promotional spend into measurable customer revenue.",
   },
   {
     id: "influencer-marketing",
     icon: Users,
-    title: "Influencer Marketing & Collaborations",
+    title: "Influencer Marketing & Brand Collaborations",
     category: "CREATOR PARTNERSHIPS & COLLABORATIONS",
     tagline: "Connect with relevant creators and expand your reach.",
     description:
-      "Introduce your products and services to new audiences with curated influencer partnerships aligned to your industry, goals, target audience, and budget.",
+      "The right influencer collaboration can help a brand introduce its products and services to new audiences. Through RCG Media, businesses can explore influencer marketing opportunities based on their industry, campaign objectives, target audience, and budget.",
     image: serviceInfluencer,
     items: [
-      "Creator Sourcing",
-      "Campaign Briefs",
-      "Promotional Reels",
-      "Branded Content",
-      "Partnership Terms",
-      "Performance Reports",
+      "Influencer marketing campaigns tailored to brand goals",
+      "Brand and creator collaborations across niches",
+      "Product and service promotions through verified influencers",
+      "Promotional reels and branded content creation",
+      "Influencer campaign planning and coordination",
+      "Creator partnership opportunities & outreach",
+      "Campaign content production and promotional support",
     ],
+    conclusion:
+      "Our objective is to connect brands with relevant creators and develop collaborations that align with their marketing goals, subject to availability and mutually agreed terms.",
   },
   {
     id: "celebrity-promotions",
     icon: Star,
-    title: "Celebrity Promotions & Collaborations",
+    title: "Celebrity Promotions & Celebrity Collaborations",
     category: "HIGH-IMPACT CELEBRITY ENDORSEMENTS",
     tagline: "High-impact visibility through celebrity-led content.",
     description:
-      "Coordinate promotional and collaboration opportunities that connect brands with wider audiences through celebrity videos, endorsements, podcasts, and interviews.",
+      "For brands looking to increase visibility through celebrity-led content, RCG Media can coordinate suitable promotional and collaboration opportunities.",
     image: serviceCelebrity,
     items: [
-      "Celebrity Videos",
-      "Brand Endorsements",
-      "Podcast Appearances",
-      "Launch Events",
-      "Press Coordination",
-      "Media Rights",
+      "Celebrity promotional videos & shoutouts",
+      "Celebrity brand endorsements and campaign coordination",
+      "Celebrity interviews and video collaborations",
+      "Celebrity podcast appearances & studio features",
+      "Product and business promotional campaigns",
+      "Celebrity-led branded content and distribution",
+      "Promotional video production and editing",
+      "Artist and brand collaboration coordination",
     ],
+    conclusion:
+      "From identifying the campaign concept to coordinating production and promotional content, we work towards creating opportunities that connect brands with wider audiences. Celebrity participation is subject to availability, approvals, and agreed commercial terms.",
   },
   {
     id: "podcast-studio",
     icon: Mic,
-    title: "Podcast Production & Studio Services",
+    title: "Podcast Production & Professional Studio Services",
     category: "BODUPPAL, HYDERABAD STUDIO FACILITY",
     tagline: "Professional studio in Boduppal, Hyderabad.",
     description:
-      "A dedicated, fully equipped studio in Boduppal, Hyderabad with multi-cam 4K recording, Shure SM7B broadcast mics, and acoustic soundproofing for podcasts and interviews.",
+      "RCG Media provides a professional content creation environment in Boduppal, Hyderabad, for entrepreneurs, businesses, professionals, and creators.",
     image: servicePodcast,
     items: [
-      "Multi-Cam 4K Shoot",
-      "Broadcast Mics",
-      "Acoustic Wood Studio",
-      "Founder Interviews",
-      "Podcast Editing",
-      "Social Cutdowns",
+      "Professional podcast recording with Shure SM7B broadcast mics",
+      "Business interviews and expert conversations",
+      "Video podcasts and multi-camera 4K shoot setup",
+      "Camera, microphone, acoustic wood treatment, and lighting facilities",
+      "Reels and short-video recording for personal branding",
+      "Podcast editing and video post-production",
+      "Promotional clips for social media rollout",
+      "Personal branding content production",
     ],
+    conclusion:
+      "Whether you want to launch a podcast, share your entrepreneurial journey, interview industry experts, or build your personal brand, RCG Media helps bring your ideas to life through professional media production.",
   },
   {
     id: "business-promotions",
     icon: TrendingUp,
-    title: "Business Promotions & Advertising",
-    category: "CREATIVE ADVERTISING & LOCAL PROMOTIONS",
-    tagline: "Communicate strengths and convert customers.",
+    title: "Business Promotions & Advertising Agency Solutions",
+    category: "COMMERCIAL ADVERTISING & GROWTH AGENCY",
+    tagline: "Communicate strengths, capture local market share, and convert customers.",
     description:
-      "Creative advertising and promotional activities designed to help local and regional businesses communicate their strengths and create customer connections.",
+      "We help businesses communicate their offerings through creative advertising and promotional activities. As an advertising agency, our primary focus is helping businesses scale through high-conversion Meta Ads, Google search campaigns, and local promotions.",
     image: serviceAds,
     items: [
-      "Brand Launch Ads",
-      "Local Business Promos",
-      "Billboards & Creatives",
-      "Digital Ads Rollout",
-      "Awareness Campaigns",
-      "Conversion Funnels",
+      "Business promotional campaigns & ad agency strategy",
+      "Product and service advertising across digital channels",
+      "Local business promotions and footfall generation",
+      "Brand launch videos and creative commercial advertisements",
+      "Promotional reels and high-converting video ads",
+      "Digital campaign coordination on Meta & Google",
+      "Influencer-led business promotions & customer acquisition",
+      "Marketing content for customer awareness and conversion",
     ],
+    conclusion:
+      "Our goal is to help businesses communicate their strengths, improve visibility, and create dependable opportunities to connect with potential customers and grow their bottom line.",
   },
   {
     id: "music-creative-production",
@@ -191,16 +220,19 @@ export const services: Service[] = [
     category: "SONG PRODUCTION & CINEMATIC MUSIC VIDEOS",
     tagline: "Storytelling, rhythm, and visual artistry.",
     description:
-      "Drawing from extensive experience producing songs and creative videos, we bring production planning, musical aesthetics, and cinematic storytelling to every project.",
+      "Alongside business and digital media projects, Anusha Sathapathy has been actively involved in producing songs and creative video projects. These experiences have strengthened our expertise in production planning, creative coordination, visual storytelling, and promotional distribution.",
     image: serviceMusic,
     items: [
-      "Song Audio Production",
-      "Music Video Shoots",
-      "Artist Brand Launch",
-      "Cinematic Storytelling",
-      "Audio Mixing & Master",
-      "Streaming Rollout",
+      "Song audio production and recording coordination",
+      "Cinematic music video shoots and directorial planning",
+      "Artist brand launch and visual identity",
+      "Release and distribution via GalGal Music (@galgalmusic16)",
+      "Women empowerment anthems (e.g. Mahila Mahila Maharanive)",
+      "Regional folk and festive song productions",
+      "End-to-end post-production, color grading & audio mastering",
     ],
+    conclusion:
+      "Through RCG Media, we bring the same creative thinking and production-oriented approach to business videos, advertisements, brand campaigns, and creative music releases.",
   },
 ];
 
@@ -237,58 +269,39 @@ export const processSteps = [
 
 export const founderInfo = {
   name: "Anusha Sathapathy",
-  title:
+  title: "Founder & Creative Director",
+  tagline:
     "Entrepreneur | Business Development Professional | Media Producer | Digital Marketing & Brand Growth Strategist | Women Empowerment Advocate",
-  tagline: "Building Brands. Creating Opportunities. Empowering Women Through Digital Media.",
-  image: anushaFounder,
   bio: [
     "I am Anusha Sathapathy, a business development professional, media entrepreneur, content producer, and women empowerment advocate with a passion for business growth, creative media, digital marketing, and community development.",
     "My professional journey combines business analysis, business development (BDM), creative production, digital content, marketing, and entrepreneurship. Working with companies in Business Analysis and Business Development Management has equipped me with a deep understanding of operations, market opportunities, customer engagement, brand positioning, and growth strategies.",
-    "My entrepreneurial vision is to bring business strategy and creative media together to help businesses establish their identity, reach the right audience, build trust, and grow their presence in an increasingly digital world. This vision led to the establishment of RCG Media.",
+    "My entrepreneurial vision is to bring business strategy and creative media together to help businesses establish their identity, reach the right audience, build trust, and grow their presence in an increasingly digital world.",
+    "This vision led me to establish RCG Media, a media production, creative advertising, and digital marketing initiative designed to provide businesses and individuals with comprehensive brand-building and promotional solutions under one roof.",
   ],
   empowerment: {
     title: "WayTo Women Walk",
-    subtitle: "My Women Empowerment Initiative",
-    image: womenEmpowerment,
-    role: "Digital Mahila Development Officer",
-    paragraphs: [
-      "Through WayTo Women Walk, I focus on inspirational content, women's development, motivation, business awareness, and opportunities for women to express themselves and build their identities.",
-      "I believe that women have enormous potential to lead, create businesses, develop new skills, and become financially independent when they have access to knowledge, opportunities, visibility, and supportive communities.",
-      "As a Digital Mahila Development Officer, I actively participate in initiatives focused on women's development and community building, ensuring that inspiration is combined with practical opportunities for sustainable growth.",
-    ],
-  },
-  creativeSide: {
-    title: "Classical Dance & Creative Roots",
     description:
-      "My passion for creativity began in childhood with classical dance. That early foundation evolved into a deeper love for music, performance, video production, storytelling, and digital content. Today, this unique blend of artistic sensitivity and analytical business acumen guides every production at RCG Media.",
+      "Through WayTo Women Walk, I focus on inspirational content, women's development, motivation, business awareness, and opportunities for women to express themselves and build their identities. As a Digital Mahila Development Officer, I actively advocate for women's financial independence and leadership.",
   },
-  location: {
-    city: "Hyderabad",
-    area: "Boduppal",
-    fullAddress: "RCG Media Studio, Boduppal, Hyderabad, Telangana",
+  creative: {
+    title: "Classical Art & Creative Direction",
+    description:
+      "Beginning in childhood with classical dance, Anusha's love for artistic expression evolved into song production, performance videos, and storytelling that brings rare artistic depth to commercial brand campaigns.",
   },
-};
-
-export type Project = {
-  title: string;
-  category: string;
-  description: string;
-  image: string;
-  tags: string[];
 };
 
 export const stats = [
-  { value: "9+", label: "Integrated Services" },
-  { value: "120+", label: "Projects Delivered" },
-  { value: "85+", label: "Happy Clients" },
-  { value: "1 Studio", label: "Boduppal, Hyderabad" },
+  { value: "9+", label: "Integrated Services", sublabel: "Under one roof" },
+  { value: "500K+", label: "Organic Views Generated", sublabel: "Across campaigns" },
+  { value: "4K", label: "Cinema Studio Setup", sublabel: "Boduppal, Hyderabad" },
+  { value: "100%", label: "Client Commitment", sublabel: "Transparent delivery" },
 ];
 
-export const whyChooseUs = [
+export const whyUs = [
   {
     title: "A–Z Under One Roof",
     description:
-      "From branding, websites, reels, and ad films to influencer marketing, celebrity promos, and podcast studio recording.",
+      "Branding, web development, video production, digital marketing, podcasts, influencer collabs, and celebrity endorsements all coordinated by a single partner.",
   },
   {
     title: "Business Strategy First",
@@ -296,7 +309,7 @@ export const whyChooseUs = [
       "Led by a business development professional & analyst, ensuring creative media translates into real customer trust and revenue.",
   },
   {
-    title: "Dedicated Studio in Hyderabad",
+    title: "Boduppal Studio Facility",
     description:
       "State-of-the-art podcast and video shoot studio located in Boduppal, Hyderabad with cinema cameras, mics, and lighting.",
   },
@@ -307,53 +320,126 @@ export const whyChooseUs = [
   },
 ];
 
+export type Project = {
+  id: string;
+  title: string;
+  category: string;
+  serviceId: string;
+  client: string;
+  description: string;
+  image: string;
+  metric?: string;
+  deliverables: string[];
+  tags: string[];
+  link?: string;
+};
+
 export const projects: Project[] = [
   {
-    title: "Studio Podcast & Founder Interviews",
-    category: "Podcast & Studio",
+    id: "certigo-web-mobile",
+    title: "Certigo Laboratories — Clinical Web & Mobile Portal",
+    category: "Web & Mobile Development",
+    serviceId: "website-design",
+    client: "Healthcare & Diagnostic Lab",
     description:
-      "Full episode recording, multi-cam video shoot, audio mixing, and viral short-form reels produced at our Boduppal, Hyderabad studio.",
-    image: hero3,
-    tags: ["Podcast", "Boduppal Studio", "Reels", "Multi-Cam"],
+      "Engineered an enterprise-grade responsive clinical portal with online test bookings, automated WhatsApp result notifications, modern UI/UX design, and mobile-first performance.",
+    image: serviceWeb,
+    metric: "3.8x Mobile Bookings",
+    deliverables: ["Web Application", "Mobile UX", "SEO Optimization", "Booking Engine"],
+    tags: ["Web & Mobile", "Healthcare Portal", "Responsive Design", "React"],
+    link: "https://certigo-laboratories.vercel.app/",
   },
   {
-    title: "Golden Hour — Fashion Label Brand Identity",
-    category: "Branding & Design",
+    id: "ads-agency-meta-google",
+    title: "High-ROAS Meta Ads & Google Lead Generation Campaign",
+    category: "Ads Agency & Performance",
+    serviceId: "digital-marketing",
+    client: "Multi-City Retail & D2C Brand",
     description:
-      "A complete brand identity system — logo, packaging, visiting cards and social templates — for a boutique fashion house.",
+      "Designed and executed full-funnel Meta Ads (Instagram & Facebook) and Google Search campaigns with high-converting video creatives, delivering over 2,400 qualified customer leads and 4.8x ROAS.",
+    image: serviceMarketing,
+    metric: "4.8x ROAS • 2,400+ Leads",
+    deliverables: ["Meta Ads Management", "Google Search Ads", "Conversion Funnels", "A/B Testing"],
+    tags: ["Ads Agency", "Meta Ads", "Google Ads", "Performance Marketing"],
+  },
+  {
+    id: "golden-hour-branding",
+    title: "Golden Hour — Luxury Fashion Label Brand Identity",
+    category: "Branding & Identity",
+    serviceId: "business-branding",
+    client: "Boutique Fashion & Lifestyle",
+    description:
+      "Crafted an end-to-end visual positioning system — bespoke typography, trademark logo design, sustainable luxury packaging, brand guidelines, and corporate profile.",
     image: project1,
-    tags: ["Logo Design", "Brand Identity", "Print"],
+    metric: "Complete Rebrand",
+    deliverables: ["Logo Suite", "Packaging Design", "Brand Guidelines", "Company Presentation"],
+    tags: ["Branding", "Logo Design", "Packaging", "Positioning"],
   },
   {
-    title: "Independent Song & Music Video Production",
-    category: "Music & Creative Production",
+    id: "commercial-ad-film",
+    title: "Cinema-Grade Commercial Ad Film & Brand Anthem",
+    category: "Commercial Ad Films",
+    serviceId: "content-video-production",
+    client: "National Brand Campaign",
     description:
-      "Song recording, music arrangement, visual concept, and a cinematic music video produced end-to-end for an independent artist launch.",
-    image: project2,
-    tags: ["Song Production", "Music Video", "Streaming"],
-  },
-  {
-    title: "Celebrity Brand Endorsement Campaign",
-    category: "Celebrity & Collaborations",
-    description:
-      "Celebrity promotional video, brand endorsement coordination, press coverage, and social media campaign rollout.",
-    image: project3,
-    tags: ["Celebrity Management", "Endorsements", "Ad Film"],
-  },
-  {
-    title: "WayTo Women Walk — Digital Series",
-    category: "Women Empowerment",
-    description:
-      "Inspirational storytelling, community spotlight reels, and business awareness workshops empowering women entrepreneurs.",
-    image: womenEmpowerment,
-    tags: ["WayTo Women Walk", "Women In Business", "Reels"],
-  },
-  {
-    title: "Commercial Ad Film & Digital Campaign",
-    category: "Video Production",
-    description:
-      "A 60-second cinema-grade ad film — scripting, casting, shooting, editing, and paid social rollout across YouTube and Meta.",
+      "A 60-second cinema-grade commercial ad film — full concept scripting, multi-location 4K cinema shoot, original scoring, professional color grading, and viral digital rollout.",
     image: hero2,
-    tags: ["Ad Film", "Direction", "Video Production"],
+    metric: "500K+ Organic Views",
+    deliverables: ["Creative Scripting", "4K Cinema Shoot", "Original Music", "Color Grading"],
+    tags: ["Video Production", "Ad Film", "Cinema 4K", "Direction"],
+    link: "https://youtu.be/H-u0eo9KHGI",
+  },
+  {
+    id: "boduppal-podcast-series",
+    title: "Executive Leadership Podcast & Founder Interviews",
+    category: "Podcast Studio",
+    serviceId: "podcast-studio",
+    client: "Tech & Business Leaders Series",
+    description:
+      "Recorded in our dedicated Boduppal, Hyderabad studio facility with Shure SM7B broadcast microphones, multi-camera 4K direction, acoustic treatment, and 40+ viral social cutdown reels.",
+    image: hero3,
+    metric: "12 Episodes • 4K Broadcast",
+    deliverables: ["Multi-Cam 4K Shoot", "Shure Broadcast Audio", "Reels Editing", "Full Episode Cut"],
+    tags: ["Podcast", "Boduppal Studio", "Founder Series", "Reels"],
+  },
+  {
+    id: "celebrity-influencer-collab",
+    title: "Celebrity Endorsement & Influencer Launch Campaign",
+    category: "Celebrity & Influencer",
+    serviceId: "celebrity-promotions",
+    client: "Lifestyle Apparel Brand",
+    description:
+      "Secured and managed top-tier celebrity promotional video shoots, orchestrated 15+ creator collaborations, and rolled out branded reels that dominated social feeds during launch week.",
+    image: project3,
+    metric: "15+ Creators • 500K+ Reach",
+    deliverables: ["Celebrity Management", "Influencer Outreach", "Contract Terms", "Reel Production"],
+    tags: ["Celebrity", "Influencer Collab", "Brand Endorsement", "Social Buzz"],
+  },
+  {
+    id: "mahila-mahila-song",
+    title: "Mahila Mahila Maharanive — Telugu Women's Anthem",
+    category: "Music Productions",
+    serviceId: "music-creative-production",
+    client: "GalGal Music Official Release",
+    description:
+      "Produced by Anusha Sathapathy in collaboration with GalGal Music (@galgalmusic16). Featuring vocals by Srikrishna, composed by Anji Pamidi, and lyrics by Raju Nallabelly.",
+    image: project2,
+    metric: "GalGal Music Release",
+    deliverables: ["Audio Production", "Vocal Arrangement", "Music Video Direction", "Channel Release"],
+    tags: ["Music Production", "GalGal Music", "Women Anthem", "Telugu Song"],
+    link: "https://youtube.com/@galgalmusic16",
+  },
+  {
+    id: "wayto-women-walk",
+    title: "WayTo Women Walk — Digital Series & Workshop",
+    category: "Women Empowerment",
+    serviceId: "women-empowerment",
+    client: "Community Empowerment Initiative",
+    description:
+      "Spearheaded by Anusha Sathapathy as Digital Mahila Development Officer — spotlight reels, entrepreneurial mentoring, and confidence-building workshops for aspiring women founders.",
+    image: womenEmpowerment,
+    metric: "50+ Women Mentored",
+    deliverables: ["Video Series", "Community Workshops", "Mentorship Modules", "Digital Content"],
+    tags: ["Women Empowerment", "WayTo Women Walk", "Mentorship", "Community"],
   },
 ];

@@ -175,6 +175,16 @@ function Services() {
                         </div>
                       </div>
 
+                      {/* Delivery Philosophy & Approach (Unabridged Full Context) */}
+                      {service.conclusion && (
+                        <div className="mt-6 rounded-2xl border border-accent/25 bg-accent/5 p-4 text-xs sm:text-sm italic leading-relaxed text-foreground/90">
+                          <p className="not-italic text-[10px] font-bold uppercase tracking-widest text-accent mb-1.5">
+                            Our Strategic Approach & Value:
+                          </p>
+                          "{service.conclusion}"
+                        </div>
+                      )}
+
                       {/* Action Links */}
                       <div className="mt-8 flex flex-wrap items-center gap-4">
                         <Link
