@@ -8,8 +8,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Clapperboard,
-  ClipboardList,
-  Handshake,
   Heart,
   HeartHandshake,
   Layers,
@@ -19,7 +17,6 @@ import {
   Palette,
   Play,
   Quote,
-  Search,
   Sparkles,
   Star,
   TrendingUp,
@@ -30,7 +27,7 @@ import bgHome2 from "@/assets/bg-home-2.png";
 import bgHome3 from "@/assets/bg-home-3.png";
 import anushaFounder from "@/assets/anusha-founder.jpg";
 import womenEmpowerment from "@/assets/women-empowerment.jpg";
-import { processSteps, projects, services, stats } from "@/lib/site-data";
+import { projects, services, stats } from "@/lib/site-data";
 import { Reveal } from "@/components/Reveal";
 import { OurSongsShowcase } from "@/components/OurSongsShowcase";
 
@@ -340,145 +337,6 @@ function StatsStrip() {
             </div>
           </Reveal>
         ))}
-      </div>
-    </section>
-  );
-}
-
-// Interactive Animated 4-Step Process Flow (Referencing attached image)
-function AnimatedProcessStepper() {
-  const [activeStep, setActiveStep] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % processSteps.length);
-    }, 4500);
-    return () => clearInterval(interval);
-  }, [isPaused]);
-
-  const icons = [Search, ClipboardList, Sparkles, Handshake];
-
-  const handleStepClick = (nextIdx: number) => {
-    setActiveStep(nextIdx % processSteps.length);
-  };
-
-  return (
-    <section className="border-y border-border bg-card/40 py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-accent">
-              How We Work
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-foreground sm:text-4xl">
-              Our Structured <span className="gold-text italic">Four-Step Process</span>
-            </h2>
-            <p className="mt-3 text-sm text-muted-foreground">
-              Click any step or arrow to explore each stage of our workflow — from discovery to multi-channel scaling.
-            </p>
-          </div>
-        </Reveal>
-
-        {/* 4 Connected Cards Grid */}
-        <div
-          className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          {processSteps.map((step, i) => {
-            const StepIcon = icons[i] || Sparkles;
-            const isActive = i === activeStep;
-
-            return (
-              <Reveal key={step.step} delay={i * 90} className="relative">
-                <div
-                  onClick={() => handleStepClick(i)}
-                  className={`group relative flex h-full cursor-pointer flex-col rounded-3xl border p-7 text-center transition-all duration-500 ${
-                    isActive
-                      ? "border-accent bg-background/95 shadow-2xl shadow-accent/20 -translate-y-2 ring-1 ring-accent/50"
-                      : "border-border/80 bg-background/80 hover:-translate-y-1.5 hover:border-accent/40"
-                  }`}
-                >
-                  {/* Top Stepper Circle (Clean, Count Removed) */}
-                  <div className="relative mx-auto mb-6 flex items-center justify-center">
-                    <div
-                      className={`relative flex h-20 w-20 items-center justify-center rounded-full border-2 p-1 transition-all duration-500 ${
-                        isActive
-                          ? "border-accent bg-accent/15 scale-110 shadow-lg shadow-accent/25"
-                          : "border-border/80 bg-card group-hover:border-accent/50"
-                      }`}
-                    >
-                      <div
-                        className={`flex h-full w-full items-center justify-center rounded-full transition-colors ${
-                          isActive
-                            ? "bg-accent/20 text-accent"
-                            : "bg-linear-to-br from-primary/20 via-accent/20 to-transparent text-primary group-hover:text-accent"
-                        }`}
-                      >
-                        <StepIcon className="h-8 w-8" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Stage Progress Connector Arrow (In-Line Between Cards, Desktop Only) */}
-                  {i < processSteps.length - 1 && (
-                    <div className="hidden lg:flex absolute -right-3.5 top-1/2 -translate-y-1/2 z-20 pointer-events-none">
-                      <span className="flex h-7 w-7 items-center justify-center rounded-full border border-accent/40 bg-card text-accent shadow-lg shadow-black/50">
-                        <ChevronRight className="h-4 w-4" />
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Phase Tag */}
-                  <span
-                    className={`text-[10px] font-bold uppercase tracking-[0.25em] transition-colors ${
-                      isActive ? "text-accent" : "text-muted-foreground"
-                    }`}
-                  >
-                    {step.phase}
-                  </span>
-
-                  {/* Step Title */}
-                  <h3 className="mt-2 font-display text-lg font-bold text-foreground">
-                    {step.title}
-                  </h3>
-
-                  {/* Colored underline bar below title */}
-                  <div
-                    className={`mx-auto mt-3 h-0.5 rounded-full transition-all duration-500 ${
-                      isActive
-                        ? "w-16 bg-accent shadow-sm shadow-accent"
-                        : "w-10 bg-linear-to-r from-primary to-accent"
-                    }`}
-                  />
-
-                  {/* Step Description */}
-                  <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-                    {step.description}
-                  </p>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
-
-        {/* Stepper Progress Indicator */}
-        <div className="mt-8 flex justify-center gap-2">
-          {processSteps.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => handleStepClick(i)}
-              aria-label={`Go to step ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-500 ${
-                i === activeStep
-                  ? "w-8 bg-accent"
-                  : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/60"
-              }`}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -1034,9 +892,6 @@ function Home() {
           </Reveal>
         </div>
       </section>
-
-      {/* Four-Step Process Stepper Flow with Animated Progression */}
-      <AnimatedProcessStepper />
 
       {/* Our Songs & Music Productions Section (GalGal Music @galgalmusic16) */}
       <OurSongsShowcase />

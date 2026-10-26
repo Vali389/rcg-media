@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, MessageCircle, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logoImg from "@/assets/rcg-logo.png";
 import { cn } from "@/lib/utils";
 
@@ -77,16 +77,6 @@ export function Navbar() {
           >
             Get a Quote
           </Link>
-          <a
-            href="https://wa.me/919989886369?text=Hello%20RCG%20Media,%20I%20would%20like%20to%20enquire%20about%20your%20services."
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Chat on WhatsApp"
-            title="Chat on WhatsApp"
-            className="ml-2 flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-white shadow-md shadow-[#25D366]/30 transition-all hover:scale-110"
-          >
-            <MessageCircle className="h-5 w-5 fill-white stroke-none" />
-          </a>
         </nav>
 
         <button
@@ -116,15 +106,6 @@ export function Navbar() {
             >
               Get a Quote
             </Link>
-            <a
-              href="https://wa.me/919989886369?text=Hello%20RCG%20Media,%20I%20would%20like%20to%20enquire%20about%20your%20services."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-center text-sm font-semibold text-white"
-            >
-              <MessageCircle className="h-4 w-4 fill-white stroke-none" />
-              Chat on WhatsApp
-            </a>
           </div>
         </nav>
       )}

@@ -3,11 +3,9 @@ import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   ExternalLink,
-  Headphones,
-  Mic,
   Music,
   Play,
-  Sparkles,
+  X,
   Youtube,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
@@ -17,77 +15,51 @@ interface SongItem {
   number: string;
   title: string;
   category: string;
-  subtitle: string;
-  description: string;
-  videoId?: string;
+  videoId: string;
   youtubeUrl: string;
-  singer?: string;
-  producer: string;
-  label: string;
 }
 
 const songs: SongItem[] = [
   {
-    id: "ad-film-anthem",
-    number: "01",
-    title: "Commercial Ad Film & Brand Production",
-    category: "Commercial Film & Original Score",
-    subtitle: "Full-scale cinematic ad film with original music direction",
-    description:
-      "A 60-second cinema-grade commercial ad film — concept scripting, casting, multi-location shooting, and 4K editing by RCG Media.",
-    videoId: "H-u0eo9KHGI",
-    youtubeUrl: "https://youtu.be/H-u0eo9KHGI",
-    producer: "Anusha Sathapathy",
-    label: "RCG Media & GalGal Music",
-  },
-  {
-    id: "mahila-mahila",
-    number: "02",
-    title: "Mahila Mahila Maharanive — Official Song",
-    category: "Women Empowerment Anthem",
-    subtitle: "Inspirational anthem celebrating womanhood & resilience",
-    description:
-      "A powerful Telugu women's empowerment anthem celebrating courage and leadership. Produced by Anusha Sathapathy on GalGal Music.",
-    youtubeUrl: "https://youtube.com/@galgalmusic16",
-    singer: "Srikrishna (Vocals: Sai Bhavana & Keerthi)",
-    producer: "Anusha Sathapathy",
-    label: "GalGal Music (@galgalmusic16)",
-  },
-  {
     id: "neelaveni",
-    number: "03",
-    title: "Neelaveni — Official Folk Music Video",
-    category: "Cinematic Folk Melody",
-    subtitle: "Vibrant regional folk melody with cinematic visuals",
-    description:
-      "A soulful Telugu folk track capturing authentic cultural heritage, rhythmic beats, and rural traditions.",
-    youtubeUrl: "https://youtube.com/@galgalmusic16",
-    producer: "Anusha Sathapathy / GalGal Music",
-    label: "GalGal Music (@galgalmusic16)",
+    number: "01",
+    title: "Neelaveni — Charminar Bangula",
+    category: "Telangana Mass Folk Song",
+    videoId: "Km-3eWKIuWU",
+    youtubeUrl: "https://www.youtube.com/watch?v=Km-3eWKIuWU",
   },
   {
-    id: "puttintiki-rakhi",
+    id: "charminar-bangula",
+    number: "02",
+    title: "Charminar Bangula — Hit Track",
+    category: "GalGal Music Hit Track",
+    videoId: "3GHeUjQ5vRg",
+    youtubeUrl: "https://www.youtube.com/watch?v=3GHeUjQ5vRg",
+  },
+  {
+    id: "puttala-yellamma",
+    number: "03",
+    title: "Puttala Yellamma — Bonalu Special",
+    category: "Telangana Bonalu Festival Folk",
+    videoId: "qm5DSt6PR8k",
+    youtubeUrl: "https://www.youtube.com/watch?v=qm5DSt6PR8k",
+  },
+  {
+    id: "galgal-playlist",
     number: "04",
-    title: "Puttintiki Velle Panduga Rakhi",
-    category: "Cultural Festival Special",
-    subtitle: "Festive celebration song honoring family traditions",
-    description:
-      "A heartwarming celebration of family bonds and traditional Telugu festivals, produced with authentic musical composition.",
-    youtubeUrl: "https://youtube.com/@galgalmusic16",
-    producer: "Anusha Sathapathy / GalGal Music",
-    label: "GalGal Music (@galgalmusic16)",
+    title: "GalGal Music — Hit Songs Playlist",
+    category: "Official Folk & Festival Hits",
+    videoId: "JPuoENM1qnI",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=JPuoENM1qnI&list=PLBF7Vmjzf9Xb4Hl0yVvnkFGG_Zv0ANd71",
   },
 ];
 
 export function OurSongsShowcase() {
-  const [activeIdx, setActiveIdx] = useState(0);
-  const activeSong = songs[activeIdx] || songs[0]!;
+  const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
 
   return (
-    <section className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      {/* Background ambient lighting */}
-      <div className="pointer-events-none absolute -top-16 left-1/2 -translate-x-1/2 h-96 w-[700px] rounded-full bg-accent/10 blur-3xl" />
-
+    <section className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       {/* Header */}
       <Reveal>
         <div className="mx-auto max-w-3xl text-center">
@@ -96,12 +68,10 @@ export function OurSongsShowcase() {
             Our Songs & Music Productions
           </div>
           <h2 className="mt-4 font-display text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
-            Our Songs & <span className="gold-text italic">GalGal Music Releases</span>
+            Our Songs & <span className="gold-text italic">Music Productions</span>
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Original music productions, inspirational women empowerment anthems, and viral regional
-            tracks produced by Anusha Sathapathy and RCG Media in association with our official YouTube
-            channel{" "}
+          <p className="mt-3 text-sm sm:text-base leading-relaxed text-muted-foreground">
+            Explore our latest regional folk music videos, festival specials, and original songs released on{" "}
             <a
               href="https://youtube.com/@galgalmusic16"
               target="_blank"
@@ -112,269 +82,136 @@ export function OurSongsShowcase() {
             </a>
             .
           </p>
-
-          {/* Official Channel Action Badge */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href="https://youtube.com/@galgalmusic16"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2.5 rounded-full border border-red-500/40 bg-red-950/30 px-5 py-2.5 text-xs font-bold text-red-200 backdrop-blur-md transition-all hover:border-red-500 hover:bg-red-900/50 hover:text-white hover:shadow-lg hover:shadow-red-950/50"
-            >
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-white shadow-sm">
-                <Youtube className="h-3.5 w-3.5 fill-white" />
-              </span>
-              <span>Official Channel: @galgalmusic16</span>
-              <ExternalLink className="h-3.5 w-3.5 opacity-70 transition-transform group-hover:translate-x-0.5" />
-            </a>
-
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card/60 px-4 py-2 text-xs font-semibold text-muted-foreground">
-              <Sparkles className="h-3 w-3 text-accent" /> Produced by Anusha Sathapathy
-            </span>
-          </div>
         </div>
       </Reveal>
 
-      {/* Integrated Single-Row Cinema Player & Playlist Showcase */}
-      <Reveal delay={150}>
-        <div className="mt-12 overflow-hidden rounded-4xl border border-accent/40 bg-card p-4 sm:p-6 shadow-2xl shadow-black/80">
-          <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
-            {/* Left Column (7 cols): Cinema Video Player */}
-            <div className="lg:col-span-7">
-              <div className="relative aspect-16/9 w-full overflow-hidden rounded-3xl bg-black border border-border/80 shadow-2xl">
-                {activeSong.videoId ? (
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${activeSong.videoId}?rel=0&autoplay=0`}
-                    title={activeSong.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="h-full w-full border-0"
-                  />
-                ) : (
-                  <div className="relative flex h-full w-full flex-col items-center justify-center p-6 text-center">
-                    <div className="absolute inset-0 bg-radial from-accent/20 via-card/90 to-background opacity-95" />
-                    <div className="relative z-10 max-w-md">
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/40 bg-accent/15 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-accent">
-                        <Headphones className="h-3 w-3" />
-                        {activeSong.category}
-                      </span>
-                      <h4 className="mt-4 font-display text-xl font-bold text-foreground">
-                        {activeSong.title}
-                      </h4>
-                      <p className="mt-2 text-xs text-muted-foreground line-clamp-3">
-                        {activeSong.description}
-                      </p>
-                      <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-                        <a
-                          href={activeSong.youtubeUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 rounded-full bg-red-600 px-5 py-2.5 text-xs font-bold text-white shadow-lg shadow-red-900/40 hover:bg-red-700 transition-all hover:scale-105"
-                        >
-                          <Youtube className="h-3.5 w-3.5 fill-white" />
-                          Watch on YouTube @galgalmusic16
-                        </a>
-                        <button
-                          type="button"
-                          onClick={() => setActiveIdx(0)}
-                          className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-foreground hover:border-accent hover:text-accent transition-all"
-                        >
-                          <Play className="h-3 w-3 text-accent" />
-                          Play Ad Film
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
+      {/* 4 Songs in a Single Row */}
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {songs.map((song, idx) => (
+          <Reveal key={song.id} delay={idx * 80}>
+            <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/80 bg-card shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-2xl hover:shadow-accent/10">
+              {/* YouTube Thumbnail with Play Button Overlay */}
+              <div className="relative aspect-16/10 w-full overflow-hidden bg-black">
+                <img
+                  src={`https://img.youtube.com/vi/${song.videoId}/hqdefault.jpg`}
+                  alt={song.title}
+                  loading="lazy"
+                  width={640}
+                  height={360}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-black/30 to-transparent" />
 
-              {/* Player Caption */}
-              <div className="mt-3 flex items-center justify-between px-2 text-xs">
-                <span className="font-semibold text-foreground truncate max-w-sm">
-                  Now Playing: <span className="text-accent">{activeSong.title}</span>
+                {/* Track Number Badge */}
+                <span className="absolute top-3 left-3 rounded-full border border-primary/40 bg-background/85 px-2.5 py-0.5 text-[10px] font-bold text-primary backdrop-blur-md">
+                  {song.number}
                 </span>
-                <a
-                  href={activeSong.youtubeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-red-400 hover:text-red-300 font-semibold text-xs"
+
+                {/* Center Play Button Overlay */}
+                <button
+                  type="button"
+                  onClick={() => setPlayingVideoId(song.videoId)}
+                  aria-label={`Play ${song.title}`}
+                  className="absolute inset-0 m-auto flex h-12 w-12 items-center justify-center rounded-full bg-red-600/90 text-white shadow-xl shadow-red-950/60 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-red-600"
                 >
-                  <Youtube className="h-3.5 w-3.5" />
-                  Open on YouTube
-                  <ExternalLink className="h-3 w-3" />
-                </a>
-              </div>
-            </div>
-
-            {/* Right Column (5 cols): Interactive Track List */}
-            <div className="lg:col-span-5 flex flex-col justify-between space-y-3">
-              <div className="flex items-center justify-between pb-2 border-b border-border/80">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                  Featured Releases from @galgalmusic16
-                </h4>
-                <span className="text-[11px] text-accent font-semibold">Select to Play</span>
+                  <Play className="h-5 w-5 fill-white ml-0.5" />
+                </button>
               </div>
 
-              <div className="space-y-2.5">
-                {songs.map((song, i) => {
-                  const isActive = i === activeIdx;
-                  return (
-                    <div
-                      key={song.id}
-                      className={`group flex items-center justify-between rounded-2xl border p-3.5 transition-all duration-300 ${
-                        isActive
-                          ? "border-accent bg-accent/10 shadow-md shadow-accent/10"
-                          : "border-border/70 bg-card hover:border-accent/40 hover:bg-card/90"
-                      }`}
-                    >
-                      <button
-                        type="button"
-                        onClick={() => setActiveIdx(i)}
-                        className="flex flex-1 items-center gap-3 text-left min-w-0"
-                      >
-                        <span
-                          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition-colors ${
-                            isActive
-                              ? "bg-accent text-accent-foreground font-bold shadow-md"
-                              : "bg-secondary text-muted-foreground group-hover:bg-accent group-hover:text-accent-foreground"
-                          }`}
-                        >
-                          <Play className="h-3.5 w-3.5 fill-current ml-0.5" />
-                        </span>
-                        <div className="min-w-0 flex-1">
-                          <p className="truncate font-display text-xs sm:text-sm font-bold text-foreground group-hover:text-primary transition-colors">
-                            {song.title}
-                          </p>
-                          <p className="truncate text-[10px] text-muted-foreground">
-                            {song.producer} • {song.label}
-                          </p>
-                        </div>
-                      </button>
-
-                      {/* Direct YouTube Link for each song */}
-                      <a
-                        href={song.youtubeUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title={`Watch ${song.title} on YouTube`}
-                        className="ml-2 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-red-500/30 bg-red-950/20 text-red-400 transition-all hover:bg-red-600 hover:text-white hover:scale-105"
-                      >
-                        <Youtube className="h-4 w-4 fill-current" />
-                      </a>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="pt-2">
-                <a
-                  href="https://youtube.com/@galgalmusic16"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-red-600/90 py-2.5 text-xs font-bold text-white transition-all hover:bg-red-600 hover:shadow-lg hover:shadow-red-950/40"
-                >
-                  <Youtube className="h-4 w-4 fill-white" />
-                  View All Songs on @galgalmusic16 Channel
-                  <ExternalLink className="h-3 w-3" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Reveal>
-
-      {/* Single-Row 4-Card Grid with Direct YouTube Links (Requested by User) */}
-      <Reveal delay={250}>
-        <div className="mx-auto mt-8">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {songs.map((song, i) => {
-              const isActive = i === activeIdx;
-              return (
-                <div
-                  key={song.id}
-                  className={`group relative flex flex-col justify-between rounded-2xl border p-4 text-left transition-all duration-300 ${
-                    isActive
-                      ? "border-accent bg-accent/10 shadow-lg shadow-accent/10 -translate-y-1"
-                      : "border-border/80 bg-card hover:border-accent/50 hover:bg-card/90"
-                  }`}
-                >
-                  <div>
-                    {/* Top Row: Track Number & Direct YouTube Action */}
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-accent">{song.number}</span>
-                      <a
-                        href={song.youtubeUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title={`Watch ${song.title} on YouTube`}
-                        className="inline-flex items-center gap-1 rounded-full border border-red-500/40 bg-red-950/30 px-2 py-0.5 text-[10px] font-bold text-red-300 transition-all hover:bg-red-600 hover:text-white"
-                      >
-                        <Youtube className="h-3 w-3 fill-current" />
-                        YouTube
-                      </a>
-                    </div>
-
-                    {/* Title & Category */}
-                    <h5 className="mt-3 font-display text-sm font-bold text-foreground leading-snug line-clamp-2">
-                      {song.title}
-                    </h5>
-                    <p className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-primary">
-                      {song.category}
-                    </p>
-                    <p className="mt-1.5 text-[11px] text-muted-foreground line-clamp-2">
-                      {song.subtitle}
-                    </p>
-                  </div>
-
-                  {/* Bottom Action: Play in Page or Open on YouTube */}
-                  <div className="mt-4 flex items-center justify-between border-t border-border/60 pt-3">
-                    <button
-                      type="button"
-                      onClick={() => setActiveIdx(i)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:underline"
-                    >
-                      <Play className="h-3 w-3 fill-current" />
-                      {isActive ? "Selected" : "Preview"}
-                    </button>
-                    <a
-                      href={song.youtubeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[11px] font-semibold text-muted-foreground hover:text-red-400 flex items-center gap-1"
-                    >
-                      Listen <ExternalLink className="h-2.5 w-2.5" />
-                    </a>
-                  </div>
+              {/* Card Details */}
+              <div className="flex flex-1 flex-col justify-between p-5">
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent">
+                    {song.category}
+                  </span>
+                  <h3 className="mt-1.5 font-display text-sm font-bold text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2">
+                    {song.title}
+                  </h3>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </Reveal>
 
-      {/* Production Highlights Footer */}
-      <Reveal delay={300}>
-        <div className="mx-auto mt-12 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-xs font-semibold text-foreground">
-            <Sparkles className="h-3.5 w-3.5 text-accent" /> Cinema 4K Direction
-          </span>
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-xs font-semibold text-foreground">
-            <Music className="h-3.5 w-3.5 text-accent" /> Original Music Scoring & Audio
-          </span>
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-xs font-semibold text-foreground">
-            <Mic className="h-3.5 w-3.5 text-accent" /> Boduppal Studio Facility
-          </span>
-          <span className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/20 px-4 py-2 text-xs font-semibold text-red-200">
-            <Youtube className="h-3.5 w-3.5 text-red-500" /> GalGal Music Official Channel
-          </span>
+                {/* Actions: Watch on YouTube or Play Here */}
+                <div className="mt-4 flex items-center justify-between border-t border-border/60 pt-3 text-xs">
+                  <button
+                    type="button"
+                    onClick={() => setPlayingVideoId(song.videoId)}
+                    className="inline-flex items-center gap-1 font-semibold text-accent hover:underline"
+                  >
+                    <Play className="h-3 w-3 fill-current" />
+                    Play Video
+                  </button>
+
+                  <a
+                    href={song.youtubeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-red-500/40 bg-red-950/20 px-3 py-1 font-bold text-red-300 transition-all hover:bg-red-600 hover:text-white"
+                  >
+                    <Youtube className="h-3.5 w-3.5 fill-current" />
+                    YouTube
+                    <ExternalLink className="h-2.5 w-2.5 opacity-70" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+
+      {/* Clean Bottom Footer Bar */}
+      <Reveal delay={250}>
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-4 text-center">
+          <a
+            href="https://youtube.com/@galgalmusic16"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/30 px-6 py-2.5 text-xs font-bold text-red-200 transition-all hover:bg-red-600 hover:text-white hover:shadow-lg hover:shadow-red-950/40"
+          >
+            <Youtube className="h-4 w-4 fill-current" />
+            Visit Official Channel @galgalmusic16
+            <ExternalLink className="h-3 w-3" />
+          </a>
+
           <Link
             to="/contact"
-            className="inline-flex items-center gap-1.5 rounded-full bg-accent px-5 py-2 text-xs font-bold text-accent-foreground shadow-md transition-all hover:scale-105"
+            className="inline-flex items-center gap-1.5 rounded-full bg-accent px-6 py-2.5 text-xs font-bold text-accent-foreground shadow-md transition-all hover:scale-105"
           >
             Plan Your Music Video / Song <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
       </Reveal>
+
+      {/* Video Modal Player (When Play is clicked) */}
+      {playingVideoId && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-md"
+          onClick={() => setPlayingVideoId(null)}
+        >
+          <div
+            className="relative w-full max-w-4xl overflow-hidden rounded-3xl border border-accent/40 bg-black p-2 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setPlayingVideoId(null)}
+              aria-label="Close video player"
+              className="absolute top-4 right-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/80 text-white hover:bg-accent hover:text-accent-foreground transition-colors"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div className="relative aspect-16/9 w-full overflow-hidden rounded-2xl bg-black">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${playingVideoId}?autoplay=1&rel=0`}
+                title="RCG Media — Music Production"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="h-full w-full border-0"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
