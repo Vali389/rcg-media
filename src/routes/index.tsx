@@ -17,6 +17,7 @@ import {
   Palette,
   Play,
   Quote,
+  ShieldCheck,
   Sparkles,
   Star,
   TrendingUp,
@@ -26,7 +27,6 @@ import bgHome1 from "@/assets/bg-home-1.png";
 import bgHome2 from "@/assets/bg-home-2.png";
 import bgHome3 from "@/assets/bg-home-3.png";
 import anushaFounder from "@/assets/anusha-founder.jpg";
-import womenEmpowerment from "@/assets/women-empowerment.jpg";
 import { projects, services, stats } from "@/lib/site-data";
 import { Reveal } from "@/components/Reveal";
 import { OurSongsShowcase } from "@/components/OurSongsShowcase";
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "RCG Media brings business strategy and creative media together — branding, websites, video production, digital marketing, podcasts, influencer & celebrity collaborations, and women empowerment.",
+          "RCG Media brings business strategy and creative media together — branding, websites, video production, digital marketing, podcasts, and influencer & celebrity collaborations.",
       },
       {
         property: "og:title",
@@ -541,11 +541,11 @@ const whyRcgFeatures = [
     highlights: ["Multi-cam 4K recording", "Shure SM7B broadcast audio", "Fast post-production"],
   },
   {
-    icon: HeartHandshake,
-    title: "Empowerment & Community",
+    icon: ShieldCheck,
+    title: "Client Commitment & Trust",
     description:
-      "Committed to supporting startups, personal brands, and women entrepreneurs through the WayTo Women Walk initiative and digital community mentorship.",
-    highlights: ["WayTo Women Walk", "Digital Mahila leadership", "Inclusive entrepreneurship"],
+      "Transparent execution, continuous performance reporting, and dedicated strategic partnership designed to build lasting brand equity.",
+    highlights: ["Transparent delivery", "Continuous reporting", "Dedicated strategic partner"],
   },
 ];
 
@@ -598,10 +598,10 @@ function Home() {
                 "Data-backed digital marketing, targeted social media ads, curated influencer partnerships, and celebrity endorsements.",
             },
             {
-              icon: Heart,
-              title: "Empowerment & Trust",
+              icon: ShieldCheck,
+              title: "Client Commitment & Trust",
               description:
-                "Driving entrepreneurship, empowering women through WayTo Women Walk, and delivering transparent, measurable results.",
+                "Driving entrepreneurship, fostering customer credibility, and delivering transparent, measurable results for every partner.",
             },
           ].map((pillar, idx) => (
             <Reveal key={pillar.title} delay={idx * 80}>
@@ -880,7 +880,7 @@ function Home() {
                   Start Ads Campaign
                 </Link>
                 <a
-                  href="https://wa.me/919989886369?text=Hello%20RCG%20Media,%20I%20would%20like%20to%20enquire%20about%20Meta%20and%20Google%20Ads."
+                  href="https://wa.me/918074551596?text=Hello%20RCG%20Media,%20I%20would%20like%20to%20enquire%20about%20Meta%20and%20Google%20Ads."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-full border border-border bg-card px-5 py-3 text-xs font-semibold text-foreground hover:border-[#25D366] hover:text-[#25D366] transition-all"
@@ -1007,64 +1007,7 @@ function Home() {
         cta={{ to: "/services", label: "See all video & creative services" }}
       />
 
-      {/* WayTo Women Walk — Women Empowerment Section */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="order-2 lg:order-1 lg:col-span-7">
-            <Reveal>
-              <div className="inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.3em] text-pink-400">
-                <Heart className="h-3.5 w-3.5" />
-                Women Empowerment Initiative
-              </div>
-              <h2 className="mt-4 font-display text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
-                WayTo Women Walk — <span className="gold-text italic">Inspiring Progress</span>
-              </h2>
-            </Reveal>
-            <Reveal delay={120}>
-              <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
-                <p>
-                  Through <strong>WayTo Women Walk</strong>, founder Anusha Sathapathy combines
-                  inspiration, motivation, business awareness, and digital visibility for women
-                  looking to express themselves, build their identities, and start their own
-                  businesses.
-                </p>
-                <p>
-                  As a <strong>Digital Mahila Development Officer</strong>, Anusha actively drives
-                  initiatives that provide women with knowledge, opportunities, visibility, and
-                  supportive communities — turning inspiration into financial independence and
-                  practical leadership.
-                </p>
-              </div>
-            </Reveal>
-            <Reveal delay={200}>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Link
-                  to="/about"
-                  className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-accent hover:text-accent"
-                >
-                  Learn About WayTo Women Walk
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </Reveal>
-          </div>
-          <div className="order-1 lg:order-2 lg:col-span-5">
-            <Reveal delay={100}>
-              <div className="relative">
-                <div className="absolute -inset-3 rounded-3xl bg-linear-to-tr from-pink-500/25 via-accent/20 to-primary/20 blur-xl" />
-                <img
-                  src={womenEmpowerment}
-                  alt="WayTo Women Walk workshop"
-                  loading="lazy"
-                  width={1200}
-                  height={800}
-                  className="relative rounded-3xl border border-border object-cover shadow-2xl shadow-black/50"
-                />
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
+
 
       {/* Selected Work / Projects */}
       <section className="border-y border-border bg-card/40 py-20 lg:py-28">

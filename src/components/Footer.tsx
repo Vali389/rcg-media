@@ -22,7 +22,7 @@ export function Footer() {
               A full-service creative studio for digital marketing, branding, technology and media
               production — built to grow your business in the global market.
             </p>
-            <div className="mt-6 flex gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               {[
                 { icon: Instagram, label: "Instagram", href: "https://instagram.com" },
                 {
@@ -32,10 +32,10 @@ export function Footer() {
                 },
                 {
                   icon: MessageCircle,
-                  label: "WhatsApp Channel",
-                  href: "https://wa.me/919989886369?text=Hello%20RCG%20Media,%20I%20would%20like%20to%20enquire%20about%20your%20services.",
+                  label: "WhatsApp Channel (Follow Us)",
+                  href: "https://whatsapp.com/channel/0029VbESwYD2UPBBPGg5Hq0T",
                 },
-                { icon: Mail, label: "Email", href: "mailto:info@rcgmedia.com" },
+                { icon: Mail, label: "Email", href: "mailto:rcgmedia123@gmail.com" },
               ].map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
@@ -93,11 +93,31 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 shrink-0 text-accent" />
-                <span>hello@rcgmedia.in</span>
+                <a href="mailto:rcgmedia123@gmail.com" className="transition-colors hover:text-primary">
+                  rcgmedia123@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <MessageCircle className="h-4 w-4 shrink-0 text-[#25D366]" />
+                <a
+                  href="https://wa.me/918074551596?text=Hello%20RCG%20Media,%20I%20would%20like%20to%20enquire%20about%20your%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-[#25D366] font-medium"
+                >
+                  WhatsApp: +91 80745 51596
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <MessageCircle className="h-4 w-4 shrink-0 text-accent" />
-                <span>WhatsApp Channel — join us</span>
+                <a
+                  href="https://whatsapp.com/channel/0029VbESwYD2UPBBPGg5Hq0T"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-accent font-medium"
+                >
+                  WhatsApp Channel — Follow Us
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Instagram className="h-4 w-4 shrink-0 text-accent" />

@@ -261,7 +261,7 @@ function Projects() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <a
-                href="https://wa.me/919989886369?text=Hello%20RCG%20Media,%20I%20would%20like%20to%20discuss%20a%20new%20project."
+                href="https://wa.me/918074551596?text=Hello%20RCG%20Media,%20I%20would%20like%20to%20discuss%20a%20new%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-6 py-4 text-xs font-semibold text-foreground transition-all hover:border-[#25D366] hover:text-[#25D366]"
